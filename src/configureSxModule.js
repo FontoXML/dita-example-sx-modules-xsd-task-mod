@@ -164,7 +164,7 @@ define([
 				{ query: './chdesc', width: 2 }
 			],
 			contextualOperations: [
-				{ name: ':contexual-delete-chrow' }
+				{ name: ':contextual-delete-chrow' }
 			],
 			borders: true
 		});
