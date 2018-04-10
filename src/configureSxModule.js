@@ -85,6 +85,10 @@ define([
 		//     Each <choice> element describes one way that the user could accomplish the current step. Category:
 		//     Task elements
 		configureAsGroup(sxModule, 'self::choice', t('choice'), {
+			contextualOperations: [
+				{ name: ':contextual-insert-choice--above' },
+				{ name: ':contextual-insert-choice--below' }
+			],
 			defaultTextContainer: 'p',
 			emptyElementPlaceholderText: t('describe a choice for this step'),
 			blockBefore: [
@@ -116,8 +120,6 @@ define([
 		//     Category: Task elements
 		configureAsFrame(sxModule, 'self::choicetable', t('choice table'), {
 			contextualOperations: [
-				{ name: ':choicetable-append-chrow', hideIn: ['context-menu'] },
-				{ name: ':choicetable-insert-chrow', hideIn: ['element-menu', 'breadcrumbs-menu'] },
 				{ name: ':contextual-delete-choicetable' }
 			],
 			tabNavigationItemSelector: 'name() = ("choptionhd", "chdeschd", "choption", "chdesc")',
@@ -164,6 +166,8 @@ define([
 				{ query: './chdesc', width: 2 }
 			],
 			contextualOperations: [
+				{ name: ':contextual-insert-chrow--above' },
+				{ name: ':contextual-insert-chrow--below' },
 				{ name: ':contextual-delete-chrow' }
 			],
 			borders: true
@@ -254,6 +258,10 @@ define([
 				{ name: ':step-insert-substeps', hideIn: ['breadcrumbs-menu'] },
 				{ name: ':contextual-insert-stepresult', hideIn: ['breadcrumbs-menu'] },
 				{ name: ':step-insert-steptroubleshooting', hideIn: ['breadcrumbs-menu'] },
+				{ name: ':contextual-insert-step--above' },
+				{ name: ':contextual-insert-step--below' },
+				{ name: ':contextual-insert-stepsection--above' },
+				{ name: ':contextual-insert-stepsection--below' },
 				{ name: ':contextual-delete-step' }
 			],
 			defaultTextContainer: 'cmd',
@@ -341,8 +349,6 @@ define([
 		//     required inside the <steps> section. Category: Task elements
 		configureAsGroup(sxModule, 'self::steps', t('ordered steps'), {
 			contextualOperations: [
-				{ name: ':contextual-insert-stepsection', hideIn: ['breadcrumbs-menu'] },
-				{ name: ':contextual-insert-step', hideIn: ['breadcrumbs-menu'] },
 				{ name: ':steps-convert-to-steps-unordered' },
 				{ name: ':contextual-replace-with-steps-informal' }
 			],
@@ -369,8 +375,6 @@ define([
 		//     another. One or more steps is required inside the <steps-unordered> section. Category: Task elements
 		configureAsGroup(sxModule, 'self::steps-unordered', t('unordered steps'), {
 			contextualOperations: [
-				{ name: ':contextual-insert-stepsection', hideIn: ['breadcrumbs-menu'] },
-				{ name: ':contextual-insert-step', hideIn: ['breadcrumbs-menu'] },
 				{ name: ':steps-unordered-convert-to-steps' },
 				{ name: ':contextual-replace-with-steps-informal' }
 			],
@@ -380,6 +384,10 @@ define([
 
 		// stepsection
 		configureAsGroup(sxModule, 'self::stepsection', t('step section'), {
+			contextualOperations: [
+				{ name: ':contextual-insert-step--above' },
+				{ name: ':contextual-insert-step--below' }
+			],
 			defaultTextContainer: 'p',
 			emptyElementPlaceholderText: t('type information about the following steps'),
 			blockBefore: [
@@ -420,6 +428,8 @@ define([
 				{ name: ':contextual-insert-tutorialinfo', hideIn: ['breadcrumbs-menu'] },
 				{ name: ':contextual-insert-stepxmp', hideIn: ['breadcrumbs-menu'] },
 				{ name: ':contextual-insert-stepresult', hideIn: ['breadcrumbs-menu'] },
+				{ name: ':contextual-insert-substep--above' },
+				{ name: ':contextual-insert-substep--below' },
 				{ name: ':contextual-delete-substep' }
 			],
 			defaultTextContainer: 'cmd',

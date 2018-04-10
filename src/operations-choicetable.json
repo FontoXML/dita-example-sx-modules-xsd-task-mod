@@ -1,38 +1,4 @@
 {
-	":choicetable-append-chrow": {
-		"label": "t__Add row",
-		"description": "t__Add a new choice to this choice table.",
-		"steps": {
-			"type": "operation/append-structure",
-			"data": {
-				"childNodeStructure": [
-					"chrow",
-					["choption",
-						[{ "bindTo": "selection", "empty": true }]
-					],
-					["chdesc"]
-				],
-				"contextNodeId": "{{contextNodeId}}"
-			}
-		}
-	},
-	":choicetable-insert-chrow": {
-		"label": "t__Add row",
-		"description": "t__Add a new choice to this choice table.",
-		"steps": {
-			"type": "operation/horizontal-insert",
-			"data": {
-				"childNodeStructure": [
-					"chrow",
-					["choption",
-						[{ "bindTo": "selection", "empty": true }]
-					],
-					["chdesc"]
-				],
-				"contextNodeId": "{{contextNodeId}}"
-			}
-		}
-	},
 	":contextual-delete-chhead": {
 		"label": "t__Remove header row",
 		"icon": "times",
@@ -52,6 +18,40 @@
 		"icon": "times",
 		"steps": {
 			"type": "operation/delete-node"
+		}
+	},
+	":contextual-insert-chrow--above": {
+		"label": "t__Add row above",
+		"description": "t__Add a new choice to this choice table.",
+		"steps": {
+			"type": "operation/insert-next-to-context-node",
+			"data": {
+				"side": "before",
+				"childNodeStructure": [
+					"chrow",
+					["choption",
+						[{ "bindTo": "selection", "empty": true }]
+					],
+					["chdesc"]
+				]
+			}
+		}
+	},
+	":contextual-insert-chrow--below": {
+		"label": "t__Add row below",
+		"description": "t__Add a new choice to this choice table.",
+		"steps": {
+			"type": "operation/insert-next-to-context-node",
+			"data": {
+				"side": "after",
+				"childNodeStructure": [
+					"chrow",
+					["choption",
+						[{ "bindTo": "selection", "empty": true }]
+					],
+					["chdesc"]
+				]
+			}
 		}
 	},
 	":delete-chhead": {

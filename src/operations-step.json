@@ -13,6 +13,34 @@
 			"type": "operation/delete-node"
 		}
 	},
+	":contextual-insert-choice--above": {
+		"label": "t__Add choice above",
+		"description": "t__Describes one way that the user could accomplish the current step.",
+		"steps": {
+			"type": "operation/insert-next-to-context-node",
+			"data": {
+				"side": "before",
+				"childNodeStructure": [
+					"choice",
+					[{ "bindTo": "selection", "empty": true }]
+				]
+			}
+		}
+	},
+	":contextual-insert-choice--below": {
+		"label": "t__Add choice below",
+		"description": "t__Describes one way that the user could accomplish the current step.",
+		"steps": {
+			"type": "operation/insert-next-to-context-node",
+			"data": {
+				"side": "after",
+				"childNodeStructure": [
+					"choice",
+					[{ "bindTo": "selection", "empty": true }]
+				]
+			}
+		}
+	},
 	":contextual-insert-info": {
 		"label": "t__Add information",
 		"description": "t__Provides additional information about a step.",
@@ -28,6 +56,38 @@
 				}
 			}
 		]
+	},
+	":contextual-insert-step--above": {
+		"label": "t__Add step above",
+		"description": "t__Represents an action that a user must follow to accomplish a task.",
+		"steps": {
+			"type": "operation/insert-next-to-context-node",
+			"data": {
+				"side": "before",
+				"childNodeStructure": [
+					"step",
+					["cmd",
+						[{ "bindTo": "selection", "empty": true }]
+					]
+				]
+			}
+		}
+	},
+	":contextual-insert-step--below": {
+		"label": "t__Add step below",
+		"description": "t__Represents an action that a user must follow to accomplish a task.",
+		"steps": {
+			"type": "operation/insert-next-to-context-node",
+			"data": {
+				"side": "after",
+				"childNodeStructure": [
+					"step",
+					["cmd",
+						[{ "bindTo": "selection", "empty": true }]
+					]
+				]
+			}
+		}
 	},
 	":contextual-insert-stepresult": {
 		"label": "t__Add result",
@@ -54,6 +114,38 @@
 				"childNodeStructure": [
 					"stepxmp",
 					[{ "bindTo": "selection", "empty": true }]
+				]
+			}
+		}
+	},
+	":contextual-insert-substep--above": {
+		"label": "t__Add step above",
+		"description": "t__Represents an action that a user must follow to accomplish a step.",
+		"steps": {
+			"type": "operation/insert-next-to-context-node",
+			"data": {
+				"side": "before",
+				"childNodeStructure": [
+					"substep",
+					["cmd",
+						[{ "bindTo": "selection", "empty": true }]
+					]
+				]
+			}
+		}
+	},
+	":contextual-insert-substep--below": {
+		"label": "t__Add step below",
+		"description": "t__Represents an action that a user must follow to accomplish a step.",
+		"steps": {
+			"type": "operation/insert-next-to-context-node",
+			"data": {
+				"side": "after",
+				"childNodeStructure": [
+					"substep",
+					["cmd",
+						[{ "bindTo": "selection", "empty": true }]
+					]
 				]
 			}
 		}
